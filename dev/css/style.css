@@ -365,8 +365,26 @@ textarea {
   font: inherit;
   /* 2 */ }
 
+header {
+  padding: 20px 0px;
+  background-color: aliceblue;
+  margin-bottom: 10px; }
+  header nav {
+    float: right; }
+    header nav ul {
+      margin: 0;
+      padding: 0;
+      display: block;
+      content: "";
+      clear: both; }
+      header nav ul li {
+        display: inline; }
+        header nav ul li a {
+          display: inline-block;
+          padding: 10px 20px; }
+
 .wrapper {
-  max-width: 70em;
+  max-width: 64em;
   margin-left: auto;
   margin-right: auto; }
   .wrapper:after {
@@ -374,14 +392,34 @@ textarea {
     display: block;
     clear: both; }
 
-.content {
-  width: 66.26506%;
-  float: left;
-  margin-right: 1.20482%; }
-
-.sidebar {
-  width: 32.53012%;
+article {
+  width: 100%;
   float: right;
   margin-right: 0; }
+  @media (min-width: 32em) {
+    article {
+      width: 66.26506%;
+      float: left;
+      margin-right: 1.20482%; } }
+  @media (min-width: 60em) {
+    article {
+      width: 74.6988%;
+      float: left;
+      margin-right: 1.20482%; } }
+
+aside {
+  width: 100%;
+  float: right;
+  margin-right: 0; }
+  @media (min-width: 32em) {
+    aside {
+      width: 32.53012%;
+      float: right;
+      margin-right: 0; } }
+  @media (min-width: 60em) {
+    aside {
+      width: 24.09639%;
+      float: right;
+      margin-right: 0; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,17 +1,49 @@
 @import "susy";
 @import "normalize";
-
-$susy: (
-  container: 70em,
-  columns: 12,
-  gutters: 1/6
-);
+$susy: ( container: 64em, columns: 12, gutters: 1/6);
+$bp-medium: 32em;
+$bp-large: 60em;
+$breakpoint-no-query-fallbacks: true;
+header {
+    padding: 20px 0px;
+    background-color: aliceblue;
+    margin-bottom: 10px;
+    nav {
+        float: right;
+        ul {
+            margin: 0;
+            padding: 0;
+            display: block;
+            content: "";
+            clear: both;
+            li {
+                display: inline;
+                a {
+                    display: inline-block;
+                    padding: 10px 20px;
+                }
+            }
+        }
+    }
+}
 .wrapper {
-  @include container;
+    @include container;
 }
-.content {
-  @include span(8 of 12 first);
+article {
+    @include span(12 last);
+    @include susy-breakpoint($bp-medium, $susy) {
+        @include span(8 first);
+    }
+    @include susy-breakpoint($bp-large, $susy) {
+        @include span(9 first);
+    }
 }
-.sidebar {
-  @include span(4 of 12 last);
+aside {
+    @include span(12 last);
+    @include susy-breakpoint($bp-medium, $susy) {
+        @include span(4 last);
+    }
+    @include susy-breakpoint($bp-large, $susy) {
+        @include span(3 last);
+    }
 }
